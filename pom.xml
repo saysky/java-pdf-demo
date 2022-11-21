@@ -45,16 +45,14 @@
             </exclusions>
         </dependency>
         <dependency>
-            <!-- ALWAYS required. -->
             <groupId>com.openhtmltopdf</groupId>
             <artifactId>openhtmltopdf-core</artifactId>
-            <version>${openhtml.version}</version>
+            <version>1.0.0</version>
         </dependency>
         <dependency>
-            <!-- Required for PDF output. -->
             <groupId>com.openhtmltopdf</groupId>
             <artifactId>openhtmltopdf-pdfbox</artifactId>
-            <version>${openhtml.version}</version>
+            <version>1.0.0</version>
         </dependency>
         <dependency>
             <groupId>org.thymeleaf</groupId>
