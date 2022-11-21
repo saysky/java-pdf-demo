@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title th:text="${pdfFileName}"></title>
+    <style>
+        @page {
+            size: A4;
+            @top-center {
+                content: element(header);
+            }
+            @bottom-center {
+                content: '';
+                font-family: 'stxihei', serif;
+            }
+        }
+        html, body {
+            font-family: 'stxihei', serif;
+        }
+        table {
+            -fs-table-paginate: paginate;
+            border-collapse: collapse;
+        }
+        #page-header {
+            position: running(header);
+            border-bottom: 1px solid #555;
+            padding: 5px;
+        }
+        #page-header-text {
+            font-size: 16px;
+        }
+        #page-header-num:after {
+            float: right;
+            text-align: right;
+            content: counter(page) '/' counter(pages);
+        }
+        table {
+            width: 100%;
+            margin: auto 0;
+        }
+        table, td, th {
+            border: 1px solid #555;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #eff3fa;
+            min-width: 200px;
+        }
+    </style>
+</head>
+<body>
+<div id="page-header">
+    <span id="page-header-text">审批记录</span>
+    <span id="page-header-num"></span>
+</div>
+
+<table>
+    <tr>
+        <th colspan="2">资源信息</th>
+    </tr>
+    <tr>
+        <th>目录名称</th>
+        <td>[[${resourceName}]]</td>
+    </tr>
+    <tr>
+        <th>资源名称</th>
+        <td>[[${infoName}]]</td>
+    </tr>
+    <tr>
+        <th>资源类型</th>
+        <td>[[${resourceType}]]</td>
+    </tr>
+    <tr>
+        <th>数据提供方</th>
+        <td>[[${resOrgName}]]</td>
+    </tr>
+    <tr>
+        <th colspan="2">订阅信息</th>
+    </tr>
+    <tr>
+        <th>资源需求方</th>
+        <td>[[${orgName}]]</td>
+    </tr>
+    <tr>
+        <th>需求方系统</th>
+        <td>[[${systemName}]]</td>
+    </tr>
+    <tr>
+        <th>联系人</th>
+        <td>[[${linkMan}]]</td>
+    </tr>
+    <tr>
+        <th>联系手机</th>
+        <td>[[${linkPhone}]]</td>
+    </tr>
+    <tr>
+        <th>申请日期</th>
+        <td>[[${orderDate}]]</td>
+    </tr>
+    <tr>
+        <th>申请理由</th>
+        <td>[[${orderReason}]]</td>
+    </tr>
+    <tr>
+        <th colspan="2">审核信息</th>
+    </tr>
+    <tr>
+        <th>审核人</th>
+        <td>[[${prejuUserName}]]</td>
+    </tr>
+    <tr>
+        <th>审核结果</th>
+        <td>[[${prejuResult}]]</td>
+    </tr>
+    <tr>
+        <th>审核日期</th>
+        <td>[[${prejuDate}]]</td>
+    </tr>
+    <tr>
+        <th>审核意见</th>
+        <td>[[${prejuSuggest}]]</td>
+    </tr>
+</table>
+</body>
+</html>
